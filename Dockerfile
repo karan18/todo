@@ -81,7 +81,7 @@ WORKDIR /app
 RUN ["/bin/bash", "-c", "bundle install --jobs 4 --retry 5 --system --clean --no-cache"]
 RUN ["/bin/bash", "-c", "rake db:migrate"]
 
-CMD [ "rails", "server", "-b", "0.0.0.0" ]
+CMD [ "unicorn" ]
 
 EXPOSE 8080
 EXPOSE 3000
